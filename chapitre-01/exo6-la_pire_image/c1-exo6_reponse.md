@@ -1,5 +1,5 @@
 Sur 1000 images:
-- Image la plus longue : 33.40 ms
-- Images > 11 ms : 1000 images
+- Image la plus longue : 0,442 ms
+- Images > 11 ms : 0 images
 
-Le proramme ne tiendra pas sur un casque de VR car il ne respecte pas le budget de 11 ms par image.
+Le proramme peut donc tenir dans un casque, à condition que le reste du pipeline (transmission de la pose, composition, affichage,...) tienne lui aussi sa part du budget de 20 ms.
