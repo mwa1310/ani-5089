@@ -1,6 +1,9 @@
-Temps moyen du rendu seul : 0.0184 ms
-Temps maximum du rendu seul : 0.1000 ms
-Estimation rendu deux yeux : 0.0368 ms
-Temps restant sur un budget de 11 ms : 10.9632 ms
+- Un oeil:
+Rendu le plus long : 18,591 ms
+Images au-dessus de 11,1 ms : 591 sur 1000
 
-**Conclusion**: il faudrait surtout réduire les coûts de la logique, de la physique, de la préparation des données et des autres traitements exécutés à chaque image.
+- 2 yeux:
+Rendu le plus long : 37,182 ms
+Reste après rendu stéréo, pire cas : -26,082 ms
+
+- Conclusion: Le rendu à un seul œil dépasse déjà le budget d'une image sur deux. Le doubler consomme deux fois plus de temps dans le même budget. Il ne reste rigoureusement rien pour la logique, la transmission de la pose, ni la composition donc le programme, tel quel, ne tiendrait pas dans un casque, ni en moyenne ni sur sa pire image.
