@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Programme2</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let frameCount = 0;
+let totalRenderTime = 0;
+let maxRenderTime = 0;
+
+function loop() {
+
+    const start = performance.now();
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const end = performance.now();
+
+    const renderTime = end - start;
+
+    totalRenderTime += renderTime;
+
+    if (renderTime > maxRenderTime) {
+        maxRenderTime = renderTime;
+    }
+
+    frameCount++;
+
+    if (frameCount < 1000) {
+        requestAnimationFrame(loop);
+    } else {
+
+        const averageRenderTime = totalRenderTime / frameCount;
+
+        const stereoEstimate = averageRenderTime * 2;
+
+        const remainingTime = 11 - stereoEstimate;
+
+        console.log("Images mesurées :", frameCount);
+        console.log("Temps moyen du rendu seul :", averageRenderTime.toFixed(4), "ms");
+        console.log("Temps maximum du rendu seul :", maxRenderTime.toFixed(4), "ms");
+        console.log("Estimation rendu deux yeux :", stereoEstimate.toFixed(4), "ms");
+        console.log("Temps restant sur un budget de 11 ms :", remainingTime.toFixed(4), "ms");
+    }
+}
+
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
