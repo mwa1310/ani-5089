@@ -1,0 +1,5 @@
+- *Mon témoignage*: Vers le milieu de la vidéo, j'ai senti mes yeux qui se fatiguaient, déjà à cause de la distance de visionnage (et la qualité des images), puis à cause de la rapidité des mouvements. C'est comme si c'est moi qui bougeait. J'ai quand même pu regarder plus de 2 min et à la fin le malaise a disparu.
+
+- *Personne 1*: La vidéo m'a rapidement donné une sensation de malaise, j'avais des vertiges, surtout lorsque la camera se déplaçait dans tous les sens.J'ai ressenti une petit nausée et j'avais envie de détourné le regard de l'écran. La sensation a disparu environ 5 minutes après avoir arreté la vidéo.
+
+- *Personne 2*: pendant la vidéo, j'ai eu une sensation de fatigue de la vue. j'avais du mal à fixer un endroit en particulier en plein écran. Mes yeux piquaient un peu et voulaient se fermer. Je n'ai pas eu de nausée et mes yeux allaient mieux quand j'ai arreté.
