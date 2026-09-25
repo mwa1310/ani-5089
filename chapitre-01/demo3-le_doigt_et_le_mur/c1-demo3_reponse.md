@@ -1,0 +1,1 @@
+Après l'expérience, on conclut qu'il faudra dessiner deux fois parce que chaque œil voit la scène depuis un point de vue légèrement différent, et c'est cette différence entre les deux images qui donne la perception de profondeur. Afficher la même image aux deux yeux supprimerait cette différence.
