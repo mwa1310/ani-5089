@@ -1,2 +1,11 @@
 # fichiers executables
 *.exe
+
+# fichiers de build
+Build/
+.jenga/
+pyrightconfig.json
+.vscode/
+
+# clés
+*.jks

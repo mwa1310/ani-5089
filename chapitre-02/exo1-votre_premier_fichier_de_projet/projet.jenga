@@ -1,0 +1,11 @@
+from Jenga import *
+
+with workspace("MaSalleWks", location="."):
+    configurations(["Debug", "Release"])
+
+    with project("MaSalle"):
+        windowedapp()
+        language("C++")
+        cppdialect("C++17")
+        location(".")
+        files(["src/**.cpp"])
