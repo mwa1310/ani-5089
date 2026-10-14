@@ -2,6 +2,7 @@
 *.exe
 
 # fichiers de build
+Mes_builds/
 Build/
 .jenga/
 pyrightconfig.json
@@ -9,3 +10,6 @@ pyrightconfig.json
 
 # clés
 *.jks
+
+# kit
+R3D/

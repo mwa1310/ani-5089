@@ -1,0 +1,10 @@
+Lignes :
+cube.mesh = renderer->GetMeshSystem()->GetCube();
+cube.transform = NkMat4f::Translate(centre) * NkMat4f::Scale({ arete, arete, arete });
+cube.tint = { 1.f, 1.f, 1.f };
+cube.aabb.min = { centre.x - demi, centre.y - demi, centre.z - demi };
+cube.aabb.max = { centre.x + demi, centre.y + demi, centre.z + demi };
+rendu3d->Submit(cube);
+
+Cause :
+Mon cube s'est affiche une fois le programme correct, alors j'ai provoque exprès une cause de la liste : la boite englobante non renseignee. J'ai mis en commentaire les deux lignes qui ecrivent cube.aabb. Le cube a disparu, sans message d'erreur ni avertissement. L'explication est que la boite englobante d'un objet naît inversee (min a 1e30, max a -1e30), et que le renderer decide de ce qui est dans le champ de vision d'apres cette boite, pas d'apres le maillage. Une boite inversee ne contient rien : le cube est donc ecarte en silence au moment du Submit. Je l'ai verifie avec le compteur aabbNonRenseignee du renderer, qui valait 1 avec les lignes en commentaire. En remettant les deux lignes, calculees en coordonnees du monde (centre du cube plus ou moins la moitie de son arete), le cube est revenu et le compteur est retombe a 0. J'ai procede en ne changeant qu'un seul element a la fois.
