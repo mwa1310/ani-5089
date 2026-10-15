@@ -1,0 +1,6 @@
+Un par un : 242 cubes, drawCalls 7406, 60.0 images par seconde
+Cadence mesuree sur 400 images, synchronisation verticale coupee. Salle seule : 60.1 images par seconde.
+
+Groupés : drawCalls 1646, 60.0 images par seconde pour les memes 242 cubes, nouveau seuil 1224 cubes
+
+Trouvé : NkDrawCallInstanced, declare dans R3D/include/NKRenderer/Core/NkRendererTypes.h (champs mesh, material, transforms, tints, aabb), soumis avec NkRender3D::SubmitInstanced.

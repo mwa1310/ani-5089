@@ -1,0 +1,3 @@
+Première : Vulkan 20.570 ms
+Seconde : Software 60.660 ms
+Différences : Les deux captures montrent la meme salle, avec le meme cadrage : memes murs, meme table, meme position du soleil. La difference mesurable est le temps par image : Vulkan 20.57 ms contre Software 60.66 ms, soit un rapport d'environ 2.9. L'interface Software est la plus lente, parce qu'elle calcule l'image sur le processeur au lieu de la confier a la carte graphique, alors que Vulkan la fait dessiner par la carte. A l'image, l'ecart se voit surtout en mouvement : la cadence de Software serait visiblement plus basse.

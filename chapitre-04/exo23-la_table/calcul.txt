@@ -1,0 +1,3 @@
+Plateau : le dessus est a 0,75 m et le plateau est epais de 0,05 m, donc son centre est a y = 0,75 - 0,05 / 2 = 0,725 m. Echelle (1,20 ; 0,05 ; 0,80), centre (0,60 ; 0,725 ; 0,70).
+
+Pieds : un pied va du sol (y = 0) au dessous du plateau (y = 0,75 - 0,05 = 0,70), donc sa hauteur est 0,70 m et le y de son centre est 0,70 / 2 = 0,35 m. Section 0,06 x 0,06. Chaque centre est a 0,03 m des bords du plateau : x = 0,60 +/- (0,60 - 0,03) = 0,03 ou 1,17 ; z = 0,70 +/- (0,40 - 0,03) = 0,33 ou 1,07. Les pieds sont ainsi entierement sous le plateau, sans le depasser.

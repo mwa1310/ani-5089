@@ -1,0 +1,5 @@
+Avant : 27
+
+Après : 21
+
+Comptage : j'ai compte les lignes de la construction de la salle, entre les marqueurs DEBUT SALLE et FIN SALLE, sans les lignes vides ni les commentaires, avec la meme methode sur les deux versions. La version Avant est la salle ecrite avec une fonction Pave et des constantes de hauteur calculees a la main (yMur, yPorte, yPied, yCube, hPied) ; la version Apres utilise PoserAuSol et PoserSurTable. Les deux contiennent les memes objets : sol, quatre murs, plafond, porte, deux fenetres, plateau, quatre pieds et un cube pose sur la table. Je n'ai pas compte les definitions de PoserAuSol, PoserSurTable, Objet et Pave, ni la boucle de rendu. Le plafond, les fenetres et le plateau ne reposent pas sur le sol : ils restent ecrits en Translate * Scale dans les deux versions. Le sol est un plan dessine par une fonction a part, il compte pour une ligne dans chaque version.

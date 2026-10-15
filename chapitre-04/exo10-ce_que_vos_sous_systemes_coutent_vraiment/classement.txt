@@ -1,0 +1,7 @@
+1. RENDER3D_ANIMATION : 16727 us (surcout +8 us)
+2. RENDER3D_RENDER2D : 16712 us (surcout -7 us)
+3. RENDER3D_SIMULATION : 16695 us (surcout -24 us)
+4. RENDER3D_VFX : 16694 us (surcout -25 us)
+5. RENDER3D_SHADOW : 16687 us (surcout -32 us)
+6. RENDER3D_POST_PROCESS : 16662 us (surcout -57 us)
+Reference : RENDER3D seul : 16719 us

@@ -1,0 +1,7 @@
+Je garde :
+- RENDER3D : 16719 us (la salle elle-meme)
+Total estime : 16719 us, pour un budget d'image de 11100 us (90 Hz).
+
+Pourquoi :
+RENDER3D : il dessine la salle, sans lui il n'y a rien a voir.
+Je laisse de cote : SHADOW (surcout 0 us, le total depasserait 11100 us) ; POST_PROCESS (surcout 0 us, le total depasserait 11100 us) ; ANIMATION : aucun personnage anime dans la salle. Surcout mesure : 8 us. ; RENDER2D : il n'y a aucune interface a afficher dans la salle. Surcout mesure : -7 us. ; SIMULATION : aucune physique a visualiser. Surcout mesure : -24 us. ; VFX : la salle ne contient aucune particule. Surcout mesure : -25 us.
