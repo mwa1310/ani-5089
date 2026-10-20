@@ -1,0 +1,5 @@
+Ma texture : une photo de beton prise avec mon telephone, beton.jpg : 1570 x 1069, dans murs/beton.jpg. Elle est chargee une seule fois, avant la boucle, par renderer->GetTextures()->Load, donnee a un materiau avec SetAlbedoMap, puis le materiau est donne au pave du mur du fond. Le moteur l'annonce dans son journal (ligne recopiee dans journal.txt). Elle se repete tous les metres (SetTriplanarTileSize(1.0f)).
+
+Ce que le mur a gagne : avant, le mur du fond etait une surface beige uniforme : on le voyait mais rien ne disait a quelle distance il etait. Avec la texture, le grain et les taches du beton donnent des reperes : on estime la distance au mur et la taille des motifs, ce qui est ce que cherche l'exercice. Les trois autres murs, sans texture, paraissent plats a cote.
+
+Ce qui m'a bloque : le chemin. Il est relatif au dossier d'ou le programme est lance, donc il faut le lancer depuis Mes_builds, ou se trouve le dossier murs/. Un mur d'une couleur que je n'avais pas choisie voulait dire que la texture n'avait pas ete trouvee, et c'est le journal qui le dit, pas le code de rendu.

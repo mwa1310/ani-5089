@@ -1,0 +1,4 @@
+avant, projet : la texture est sur le mur, le fichier a ete trouve.
+avant, Build : la texture est absente, le mur garde la couleur de repli du moteur. Journal : [2026-10-20 23:56:29.886] [ERR] [default] [NkTextureLibrary.cpp:478 in Load] -> [NkTextureLibrary] Echec chargement texture : murs/beton.jpg
+apres, projet : la texture est sur le mur, le fichier a ete trouve.
+apres, Build : la texture est sur le mur, le fichier a ete trouve.

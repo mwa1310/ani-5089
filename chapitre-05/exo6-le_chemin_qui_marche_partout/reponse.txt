@@ -1,0 +1,5 @@
+Ce qui a change : le dossier courant. Le code de rendu est le meme dans les deux lancements. Un chemin relatif comme murs/beton.jpg part du dossier d'ou le programme est lance : depuis Mes_builds, le dossier murs/ existe et la texture est trouvee ; depuis Build/Bin/Debug-Windows/Exo, ce dossier n'existe pas et le fichier est introuvable, le mur prend la couleur de repli. Le journal s'ecrit lui aussi sous le dossier de lancement.
+
+Ce que LocateResource essaie : dans l'ordre, 1. le dossier courant, 2. le dossier de l'executable, 3. les parents de l'executable, 8 niveaux au plus (Build/Bin/<cfg>/<App>/ est a 4 niveaux de la racine, donc Mes_builds est trouve), 4. les parents du dossier courant, 8 niveaux au plus. Elle rend le chemin absolu trouve, ou une chaine vide, ce que le programme teste avant de donner le resultat a Load.
+
+Deja vu avec fopen : oui. Je l'avais deja rencontre avec les shaders du moteur : le journal disait que Resources/NKRenderer etait introuvable, et l'ecran restait noir tant que je n'avais pas copie le dossier a cote de mon projet. C'est le meme piege du dossier courant, que fopen avec un chemin relatif aurait donne de la meme facon.

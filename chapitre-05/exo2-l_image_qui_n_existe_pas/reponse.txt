@@ -1,0 +1,5 @@
+Ce que rend Load : Load("murs/nexistepas.png") rend false (valeur affichee : 0). L'image reste vide : IsValid() rend 0, Width() 0 et Height() 0. Le fichier n'existe pas, donc il n'y a aucun pixel a lire.
+
+Pourquoi rien ne plante : Load ne lance pas d'exception et ne s'arrete pas, il rend un booleen. L'image n'a pas de pixels (pointeur nul, dimensions a zero), et tant qu'on ne les lit pas, rien ne se passe. Il suffit donc de tester le retour de Load, ce que fait le programme avant d'afficher quoi que ce soit. Le moteur ecrit aussi l'echec dans son journal, avec le nom du fichier, et le programme continue.
+
+Ce que montre le mur : le mur ne montre pas la texture demandee mais une couleur ou un motif de repli, celui de la texture d'erreur du moteur. Le moteur a choisi de continuer plutot que de s'arreter : un decor manquant ne doit pas bloquer le programme, et le repli rend le defaut visible a l'ecran en plus du journal.
