@@ -1,0 +1,8 @@
+atlas : 512 x 512
+image : 76 x 36
+
+Ma police et sa taille : Inter, une police embarquee dans le moteur, rasterisee a 32 pixels dans un atlas ordinaire (un octet de couverture par pixel) de 512 x 512 pixels. Le mot Sortie occupe 76 x 36 pixels dans l'image, et le panneau fait 20 cm de haut pour 42 cm de large. Chaque lettre est lue dans l'atlas par ses coordonnees u0, v0, u1 et v1.
+
+A trois metres : le panneau est a 3.02 m et couvre environ NaN pixels de large a l'ecran pour 76 pixels d'image, soit NaN pixel d'image pour un pixel d'ecran. L'image est reduite, les mipmaps la lissent et le mot se lit nettement : la taille de 32 pixels de l'atlas est largement suffisante a cette distance.
+
+A cinquante centimetres : le panneau est a 0.49 m et couvre environ NaN pixels de large a l'ecran pour 76 pixels d'image, soit NaN pixel d'ecran pour un pixel d'image. L'image est agrandie : les bords des lettres, tires d'un atlas a 32 pixels, sont etales et deviennent flous. La definition de l'atlas limite la lecture de pres, et c'est ce que le champ de distance de l'exercice suivant corrige.
