@@ -1,0 +1,9 @@
+Position 1 : camera pres de la fenetre, en (-1,5 ; 1,7 ; -0,9), a 0.57 m de la pluie. La pluie est placee en (-1,98 ; 1,40 ; -0,90), avec minDistance = 0.5 m et maxDistance = 8 m. Elle est a ma gauche, a environ 90 degres, tres forte (gain d'environ 0.88), et sort surtout dans l'oreille gauche.
+
+Position 2 : camera au centre de la salle, en (0 ; 1,7 ; 0), a 2.20 m. La pluie est a ma gauche, a environ 66 degres, nettement plus faible (gain d'environ 0.23) et reste plus forte a gauche qu'a droite.
+
+Position 3 : camera dans le coin oppose, en (1,7 ; 1,7 ; 1,7), a 4.52 m. La pluie est presque en face, faible (gain d'environ 0.11) : on l'entend de loin, sans pouvoir la confondre avec un bruit de la salle.
+
+Sans positional : la pluie sort au centre, identique dans les deux oreilles, avec le meme niveau quelle que soit la position de la camera. Elle ne vient plus de la fenetre : le son est colle a la tete, et ne donne plus aucune direction ni distance.
+
+Ce que les mesures montrent : avec positional, une source a gauche donne G = 0.0800 et D = 0.0000, une source a droite G = 0.0000 et D = 0.0800, et une source devant G = 0.0567 et D = 0.0567. L'oreille du cote de la source recoit plus que l'autre (rapport 80000000.0 a gauche, 80000000.0 a droite), et devant les deux niveaux sont proches (rapport 1.00). Sans positional, les trois positions donnent G = 0.1574 / D = 0.1574 (gauche), G = 0.1573 / D = 0.1573 (devant) et G = 0.1574 / D = 0.1574 (droite) : les deux oreilles recoivent la meme chose, et la position de la source ne change plus rien.

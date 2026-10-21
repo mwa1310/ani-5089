@@ -1,0 +1,5 @@
+Lignes de mon premier son : 22 lignes de code, de l'initialisation du moteur (Initialize) a sa fermeture (Shutdown puis AudioLoader::Free) comprises, sans les lignes vides ni les commentaires. Ce compte contient aussi la boucle de rendu de la salle, qui tourne pendant que le son joue.
+
+Latence calculee et annoncee : un tampon de 256 trames a 48000 Hz dure 256 / 48000 = 5.33 ms. Le moteur annonce un tampon de 256 trames a 48000 Hz, soit 5.33 ms calcules, et une latence de 22.00 ms : elle depasse la duree du tampon de 16.67 ms. A 90 Hz une image dure 11,1 ms : le tampon audio en occupe 48 %, c'est du meme ordre que le budget d'une image entiere.
+
+Pourquoi pas dans la boucle de rendu : le son est calcule par blocs, sur son propre fil, a un rythme (un bloc de 256 trames toutes les 5,3 ms) qui n'est pas celui des images (11,1 ms). Le calculer dans la boucle de rendu ferait dependre l'un de l'autre : une image en retard ferait manquer un bloc, donc un craquement, et le delai minimal du tampon s'ajouterait a un budget d'image deja serre. On demande donc le son une seule fois avec Play, et le moteur le joue de son cote.
