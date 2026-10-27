@@ -1,0 +1,14 @@
+Lancement normal :
+lacet 90, tangage 0 : attendu (-1.0000, 0.0000, 0.0000), obtenu (-1.0000, 0.0000, 0.0000), OK
+lacet 0, tangage 30 : attendu (0.0000, 0.5000, -0.8660), obtenu (-0.0000, 0.5000, -0.8660), OK
+lacet 180, tangage 0 : attendu (0.0000, 0.0000, 1.0000), obtenu (0.0000, 0.0000, 1.0000), OK
+lacet -90, tangage 0 : attendu (1.0000, 0.0000, 0.0000), obtenu (1.0000, 0.0000, 0.0000), OK
+code de sortie : 0
+
+Lancement avec le signe du lacet inverse dans Regard() :
+lacet 90, tangage 0 : attendu (-1.0000, 0.0000, 0.0000), obtenu (1.0000, 0.0000, 0.0000), ECHEC
+lacet 0, tangage 30 : attendu (0.0000, 0.5000, -0.8660), obtenu (0.0000, 0.5000, -0.8660), OK
+lacet 180, tangage 0 : attendu (0.0000, 0.0000, 1.0000), obtenu (-0.0000, 0.0000, 1.0000), OK
+lacet -90, tangage 0 : attendu (1.0000, 0.0000, 0.0000), obtenu (-1.0000, 0.0000, 0.0000), ECHEC
+code de sortie : 1
+
