@@ -1,0 +1,8 @@
+Ma sensibilité : 0.002 radian par compte du capteur, soit 0.1146 degre par compte.
+
+Vitesse de dérive : 13.6 deg/s
+Calculee sur deux lignes eloignees de derive.txt : de lacet = 11.1 deg a t = 1.0 s a lacet = 160.2 deg a t = 12.0 s.
+
+D'où vient ce chiffre : la souris est immobile, mais la colonne brut vaut 2 a chaque image. A chaque image, la tete ajoute brut x sensibilite = 2 x 0.1146 = 0.2292 degre. Le programme tourne a 60.0 images par seconde (660 images sur 11.0 s), donc 0.2292 x 60.0 = 13.8 deg/s, ce qui est la vitesse relevee (13.6 deg/s).
+
+Pourquoi elle ne s'arrête pas : NkInput.MouseRawDeltaX() garde le deplacement du dernier evenement brut et personne ne le remet a zero. La colonne brut le montre : elle reste figee a la meme valeur, non nulle, sur toutes les lignes d'apres l'arret, alors que la souris ne bouge plus. Le module n'envoie plus d'evenement, donc il ne l'ecrase plus, et mon programme relit chaque image la meme valeur et l'ajoute encore : la tete continue de tourner seule, sans fin.

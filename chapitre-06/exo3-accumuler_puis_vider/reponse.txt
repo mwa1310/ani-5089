@@ -1,0 +1,7 @@
+Lecture du module : la version lu relit NkInput.MouseRawDeltaX() a chaque image. Souris immobile, elle continue : sa valeur passe de -122.2 a -218.4 deg entre t = 9.0 s et t = 16.0 s, soit -13.7 deg/s. Le module garde le dernier delta (valeur finale -2 comptes) et personne ne le remet a zero.
+
+Accumulé et vidé : la version vide ne bouge plus une fois la souris arretee : -30.3 deg a t = 9.0 s et -30.3 deg a t = 16.0 s (0.00 deg/s). Les evenements bruts sont ajoutes a l'accumulateur, l'image le lit une fois puis le remet a zero : sans evenement, elle ajoute zero.
+
+Accumulé sans vidage : la version sans vidage prend -12234.6 deg a t = 9.0 s et -24940.8 deg a t = 16.0 s : elle continue de tourner a -1815.2 deg/s. Son accumulateur contient la somme de tous les mouvements depuis le lancement (-264 comptes a la fin), et chaque image la relit en entier : a chaque image elle rajoute ce total, donc la rotation ne s'arrete jamais, et elle est plus forte que le defaut du module (a -13.7 deg/s) puisqu'elle reproduit le defaut avec la somme au lieu du dernier delta.
+
+Ce que fait le vidage : il fait de l'accumulateur ce qu'il doit etre, la quantite de mouvement arrivee depuis la derniere lecture. Sans lui, il garde le passe et ce passe est relu a chaque image. C'est lui qui relie les deux rythmes, celui des evenements, qui arrivent quand ils veulent, et celui des images : lire puis vider, dans cet ordre. Oublier le vidage reproduit chez soi le defaut qu'on contournait.

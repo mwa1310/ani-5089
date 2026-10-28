@@ -1,0 +1,7 @@
+Avec CaptureMouse seul : En poussant la souris vers chaque bord de la fenetre, puis au-dela, j'ai constate que le pointeur sort de la fenetre. Raison attendue : CaptureMouse ne retient le pointeur que tant qu'un bouton est enfonce, c'est la capture du systeme, pas un confinement.
+
+Ce qui le retient : ClipMouseToClient(true). Il demande au systeme de confiner le pointeur au rectangle de la zone cliente de la fenetre (ClipCursor sous Windows). Avec cet appel, le pointeur s'arrete aux bords meme sans bouton enfonce.
+
+Deux appuis de suite : En appuyant deux fois sur la touche qui reprend (version NAIF=1), puis une fois sur celle qui rend, j'ai vu que le pointeur redevient visible. Raison : le commentaire de ShowMouse dit que sous Windows ShowCursor est un compteur, pas un booleen : deux appels a false demandent deux appels a true pour revenir. Ma version corrigee garde l'etat dans une variable et n'appelle Prendre qu'une fois.
+
+Fermeture sans relâcher : Apres avoir repris le pointeur puis ferme la fenetre par sa croix sans rendre (SANS_RELACHE=1), j'ai constate que le pointeur reste confiné. Raison : le confinement n'est pas lie a la fenetre, il survit au programme s'il n'est pas relache ; le commentaire de ClipMouseToClient le dit. Le programme rend donc toujours le pointeur avant de finir.
