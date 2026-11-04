@@ -1,0 +1,5 @@
+Le gain : l'erreur moyenne passe de 1.0245 deg sans prediction a 0.4361 deg avec, soit un rapport de 2.3. Au pire, elle passe de 9.7059 a 6.6743 deg (rapport 1.5). Mesure sur 1000 images, avec une periode de 60.0 Hz.
+
+D'où vient l'erreur qui reste : le modele suppose une vitesse constante sur une periode, or la main accelere et freine en permanence : l'erreur residuelle est celle de l'acceleration, qui grandit avec le carre de l'horizon. S'y ajoute la souris : la vitesse est tiree de deux poses, donc elle porte le bruit de quantification des comptes (un compte vaut 0,126 deg) et celui de l'arrivee irreguliere des evenements. Sur les 1000 images, 289 etaient immobiles (deplacement inferieur a 0,001 deg) : elles comptent dans les deux moyennes, ou prediction et absence de prediction ont toutes les deux raison.
+
+Le facteur dix : l'affirmation dit que le rapport des deux erreurs « est en general d'un facteur dix ou plus ». Sur mes chiffres, il est de 2.3 en moyenne et de 1.5 au maximum : l'affirmation n'est pas confirmee sur ma mesure : le gain est reel mais inferieur a dix, avec une souris dont le mouvement est irregulier et des images immobiles dans la moyenne.
