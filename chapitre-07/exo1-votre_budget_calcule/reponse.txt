@@ -1,0 +1,5 @@
+La fréquence de mon écran : avec l'attente de l'ecran, la salle montre une image toutes les 16.656 ms en moyenne (mediane 16.659 ms), soit 60.0 images par seconde. Les parametres d'affichage de Windows annoncent 60 Hz (valeur lue par le programme) : les deux concordent. Dans cette mesure, c'est l'ecran qui fixe le rythme : la salle attend la fin de chaque periode avant l'image suivante.
+
+La cadence que je tiens : les budgets sont 72 Hz = 13.889 ms, 90 Hz = 11.111 ms et 120 Hz = 8.333 ms. Sans l'attente, la salle fait 6.357 ms par image en moyenne, soit 157.3 images par seconde : c'est la mesure du travail de la salle seule. En moyenne, elle tient le budget de 120 Hz (8.333 ms) et pas celui des cadences plus elevees.
+
+Ce que dit le maximum : sans attente, la moyenne est de 6.357 ms mais le maximum monte a 17.452 ms, soit 2.7 fois la moyenne ; avec l'attente de l'ecran, le maximum est de 17.789 ms pour une moyenne de 16.656 ms. Le maximum depasse le budget de 8.333 ms retenu : une moyenne qui tient peut cacher des images en retard. Un casque montre chaque image, pas la moyenne : une seule image qui depasse le budget se voit.

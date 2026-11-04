@@ -1,0 +1,5 @@
+Les deux écarts types : avec 150 copies de la salle, sans verrou l'ecart type est de 2.649 ms (moyenne 16.657 ms, max 50.565 ms) ; avec verrou il est de 0.004 ms (moyenne 33.335 ms, max 33.408 ms), soit 662.3 fois moins. La periode de mon ecran est de 16.667 ms (60.0 Hz).
+
+Ce que coûte le verrou : on passe de 60.0 images par seconde sans verrou a 30.0 avec, parce que le verrou vise deux periodes depuis le debut de chaque image, soit 33.334 ms. C'est la moitie de la cadence de l'ecran, au mieux.
+
+La décision du moteur : sur mes mesures, le verrou rend le rythme plus regulier (ecart type divise par 662.3) au prix de la moitie des images, ce qui va dans le sens de la decision du moteur : mieux vaut une cadence stable divisee par deux qu'une cadence qui oscille plus haut. Un ecran de bureau ne reprojette rien : il montre ce qu'on lui envoie, et ne dit donc pas ce qu'un casque ferait avec cette irregularite, ou le moteur de reprojection de l'ASW lisse un rythme stable a la moitie de la cadence mieux qu'un rythme qui oscille. Je mesure la regularite, pas le confort.

@@ -1,0 +1,5 @@
+Ce qui est stable : l'ecart predit - maintenant vaut la periode sur les vingt lignes (13.889 ms a 72 Hz) : il est stable par construction, puisque le code l'obtient par une addition, et il ne prouve rien. Ce qui ne l'est pas, c'est reel - predit, qui compare la prediction a ce qui arrive : -0.010 ms a 60 Hz, 2.767 a 72 Hz, 5.545 a 90 Hz et 8.322 a 120 Hz. Il change avec la cadence demandee alors que le rythme reel de l'ecran n'a pas change.
+
+Un divisé par la cadence : 1000 / 60 = 16.667 ms, 1000 / 72 = 13.889, 1000 / 90 = 11.111, 1000 / 120 = 8.333. Ce sont bien les quatre periodes imprimees par le programme (16.667, 13.889, 11.111 et 8.333 ms).
+
+La période de mon écran : reel - predit = (intervalle reel) - (periode supposee), donc l'intervalle reel vaut reel - predit + periode. J'obtiens o ms a 60 Hz, v a 72 Hz, 8 a 90 Hz et   a 120 Hz, soit en moyenne 16.656 ms, c'est-a-dire 60.0 Hz. La prediction n'a la bonne periode que pour la cadence qui correspond a mon ecran : c'est la seule ou reel - predit est proche de zero.

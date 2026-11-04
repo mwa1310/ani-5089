@@ -1,0 +1,5 @@
+Le nombre qui compte : le nombre d'images hors budget, c'est-a-dire plus longues qu'un quatre-vingt-dixieme de seconde (11,111 ms) : 3589 sur 3603 avec l'attente de l'ecran et 0 sur 9729 sans attente. Dans un casque, chaque image hors budget est une image montree en retard ou une image repetee : le visiteur la voit comme un saut.
+
+Pourquoi pas la moyenne : la moyenne vaut 16.656 ms avec l'attente et 6.167 ms sans, mais l'ecart type est de 1.228 ms et de 0.196 ms, et le maximum monte a 50.356 et 8.491 ms. Une moyenne qui tient le budget peut cacher des pointes : seule la dispersion et le maximum les montrent.
+
+Ce que l'écran change : avec l'attente, c'est l'ecran qui fixe le rythme : les intervalles se regroupent autour de sa periode (16.656 ms en moyenne). Sans attente, la salle tourne a son propre rythme, 6.167 ms par image : c'est le travail de la salle qui fixe l'intervalle, et il peut descendre bien sous la periode de l'ecran. Les deux mesures ne mesurent donc pas la meme chose : l'une mesure l'ecran, l'autre la salle.

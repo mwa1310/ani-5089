@@ -1,0 +1,4 @@
+Mes deux gestes : le geste lent fait 45 degres en 1000 ms (un regard qui suit une affiche) et le demi-tour fait 180 degres en 300 ms (la tete qui se retourne vers un bruit). Je les ai choisis a l'oppose l'un de l'autre, avec le quart de tour de 90 degres en 400 ms entre eux.
+
+Où elle aide le moins : en rapport, c'est le geste demi-tour, avec un rapport de 7.2 (8.5261 deg sans prediction, 1.1822 avec). Les rapports sont 188.8 pour le lent, 9.6 pour le rapide et 7.2 pour le demi-tour. En degres, l'erreur sans prediction est la plus forte pour le demi-tour (8.5261 deg) : ce n'est pas le meme classement, parce que le rapport compare l'erreur restante a celle qu'il y aurait eu.
+
