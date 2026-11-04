@@ -1,0 +1,8 @@
+sans le test
+image 807 : lacet = 269.72 deg, vitesse = (0.00, 20.00, 0.00) deg/s, delta.w = 1.0000
+image 808 : lacet = 270.06 deg, vitesse = (0.00, -20.00, -0.00) deg/s, delta.w = -1.0000
+image 809 : lacet = 270.40 deg, vitesse = (0.00, 20.00, 0.00) deg/s, delta.w = 1.0000
+avec le test
+image 801 : lacet = 269.65 deg, vitesse = (0.00, 20.00, 0.00) deg/s, delta.w = 1.0000
+image 802 : lacet = 269.99 deg, vitesse = (0.00, 20.00, 0.00) deg/s, delta.w = 1.0000
+image 803 : lacet = 270.31 deg, vitesse = (-0.00, 20.00, 0.00) deg/s, delta.w = -1.0000
