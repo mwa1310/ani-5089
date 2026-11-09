@@ -1,0 +1,6 @@
+image : 1, etat : dessinee
+image : 2, etat : dessinee
+image : 3, etat : dessinee
+image : 4, etat : dessinee
+image : 5, etat : dessinee
+image : 6, etat : dessinee

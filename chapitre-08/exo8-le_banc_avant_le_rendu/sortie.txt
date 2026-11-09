@@ -1,0 +1,34 @@
+﻿six tours sur un anneau de trois images
+tour 1 : emprunte 0, rendu, a soumettre 0
+  emprunt et rendu acceptes : oui
+  la soumission vise l'image empruntee : oui
+  l'index suit tour modulo trois : oui
+tour 2 : emprunte 1, rendu, a soumettre 1
+  emprunt et rendu acceptes : oui
+  la soumission vise l'image empruntee : oui
+  l'index suit tour modulo trois : oui
+tour 3 : emprunte 2, rendu, a soumettre 2
+  emprunt et rendu acceptes : oui
+  la soumission vise l'image empruntee : oui
+  l'index suit tour modulo trois : oui
+tour 4 : emprunte 0, rendu, a soumettre 0
+  emprunt et rendu acceptes : oui
+  la soumission vise l'image empruntee : oui
+  l'index suit tour modulo trois : oui
+tour 5 : emprunte 1, rendu, a soumettre 1
+  emprunt et rendu acceptes : oui
+  la soumission vise l'image empruntee : oui
+  l'index suit tour modulo trois : oui
+tour 6 : emprunte 2, rendu, a soumettre 2
+  emprunt et rendu acceptes : oui
+  la soumission vise l'image empruntee : oui
+  l'index suit tour modulo trois : oui
+les trois refus
+premier emprunt accepte : oui
+double emprunt refuse : oui
+rendu sans emprunt refuse : oui
+creation de 5 images refusee (maximum 4) : oui
+creation de 0 image refusee : oui
+chaine non creee, emprunt refuse : oui
+creation de 4 images acceptee : oui
+echecs : 0

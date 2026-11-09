@@ -1,0 +1,40 @@
+detruit la chaine gauche
+detruit la chaine droit
+recree la chaine gauche (3 images)
+recree la chaine droit (3 images)
+reenregistre l'image 0 de la chaine gauche
+reenregistre l'image 1 de la chaine gauche
+reenregistre l'image 2 de la chaine gauche
+reenregistre l'image 0 de la chaine droit
+reenregistre l'image 1 de la chaine droit
+reenregistre l'image 2 de la chaine droit
+detruit la chaine gauche
+detruit la chaine droit
+recree la chaine gauche (3 images)
+recree la chaine droit (3 images)
+reenregistre l'image 0 de la chaine gauche
+reenregistre l'image 1 de la chaine gauche
+reenregistre l'image 2 de la chaine gauche
+reenregistre l'image 0 de la chaine droit
+reenregistre l'image 1 de la chaine droit
+reenregistre l'image 2 de la chaine droit
+detruit la chaine gauche
+detruit la chaine droit
+recree la chaine gauche (3 images)
+recree la chaine droit (3 images)
+reenregistre l'image 0 de la chaine gauche
+reenregistre l'image 1 de la chaine gauche
+reenregistre l'image 2 de la chaine gauche
+reenregistre l'image 0 de la chaine droit
+reenregistre l'image 1 de la chaine droit
+reenregistre l'image 2 de la chaine droit
+detruit la chaine gauche
+detruit la chaine droit
+recree la chaine gauche (3 images)
+recree la chaine droit (3 images)
+reenregistre l'image 0 de la chaine gauche
+reenregistre l'image 1 de la chaine gauche
+reenregistre l'image 2 de la chaine gauche
+reenregistre l'image 0 de la chaine droit
+reenregistre l'image 1 de la chaine droit
+reenregistre l'image 2 de la chaine droit

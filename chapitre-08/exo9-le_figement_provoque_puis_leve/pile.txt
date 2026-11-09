@@ -1,0 +1,91 @@
+﻿[New Thread 12500.0x66d4]
+[New Thread 12500.0x78ec]
+[New Thread 12500.0x5d10]
+[New Thread 12500.0x21e4]
+[New Thread 12500.0x7808]
+[New Thread 12500.0x16c]
+[New Thread 12500.0x1a24]
+[New Thread 12500.0x32a0]
+[New Thread 12500.0x7e38]
+[New Thread 12500.0x83c8]
+[New Thread 12500.0x761c]
+[New Thread 12500.0x6e6c]
+[New Thread 12500.0x4a14]
+[New Thread 12500.0x81cc]
+[New Thread 12500.0x7f34]
+[New Thread 12500.0x789c]
+[New Thread 12500.0x6cc8]
+[New Thread 12500.0x1084]
+[New Thread 12500.0x70f0]
+[New Thread 12500.0x62ec]
+[New Thread 12500.0x77fc]
+[New Thread 12500.0x7d0c]
+[New Thread 12500.0x56c8]
+[New Thread 12500.0x7404]
+[New Thread 12500.0x45c]
+[New Thread 12500.0x6f7c]
+[New Thread 12500.0x7fe0]
+[New Thread 12500.0x4204]
+[New Thread 12500.0x801c]
+[New Thread 12500.0x286c]
+[New Thread 12500.0x2568]
+[New Thread 12500.0x7068]
+[Switching to thread 1 (Thread 12500.0x5fb0)]
+#0  0x00007ffd43043337 in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#0  0x00007ffd43043337 in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#1  0x00007ffd4303eb4f in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#2  0x00007ffd430369c1 in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#3  0x00007ffd4302e62a in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#4  0x00007ffd4302316b in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#5  0x00007ffd43022778 in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#6  0x00007ffd4302145a in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#7  0x00007ffd4301edab in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#8  0x00007ffd4301e10b in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#9  0x00007ffd430189a0 in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#10 0x00007ffd42fa6b87 in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#11 0x00007ffd42f51aeb in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#12 0x00007ffd42f5171e in igd10iumd64!OpenAdapter10_2 () from C:\Windows\System32\DriverStore\FileRepository\iigd_dch.inf_amd64_d0b39b11619fd0c4\igd10iumd64.dll
+#13 0x00007ffd48fed011 in d3d11!CreateDirect3D11DeviceFromDXGIDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#14 0x00007ffd48feb512 in d3d11!CreateDirect3D11DeviceFromDXGIDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#15 0x00007ffd48feaf26 in d3d11!CreateDirect3D11DeviceFromDXGIDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#16 0x00007ffd49006d8b in d3d11!D3D11CoreCreateLayeredDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#17 0x00007ffd49007372 in d3d11!D3D11CoreCreateLayeredDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#18 0x00007ffd49006f66 in d3d11!D3D11CoreCreateLayeredDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#19 0x00007ffd4907bf8b in d3d11!D3DPerformance_SetMarker () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#20 0x00007ffd48fec72b in d3d11!CreateDirect3D11DeviceFromDXGIDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#21 0x00007ffd48fefe14 in d3d11!D3D11CoreCreateLayeredDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#22 0x00007ffd48feff1a in d3d11!D3D11CoreCreateLayeredDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#23 0x00007ffd48fec561 in d3d11!CreateDirect3D11DeviceFromDXGIDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#24 0x00007ffd48fee8bb in d3d11!D3D11CoreCreateLayeredDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#25 0x00007ffd48fef2b7 in d3d11!D3D11CoreCreateLayeredDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#26 0x00007ffd48fedabf in d3d11!D3D11CoreCreateDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#27 0x00007ffd4905a0f3 in d3d11!D3DPerformance_GetStatus () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#28 0x00007ffd490619be in d3d11!D3D11CreateDeviceAndSwapChain () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#29 0x00007ffd4906190c in d3d11!D3DPerformance_EndEvent () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#30 0x00007ffd49063226 in d3d11!D3D11CreateDevice () from C:\WINDOWS\SYSTEM32\d3d11.dll
+#31 0x00007ffd4a350fd3 in dxgi!DXGIGetDebugInterface1 () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#32 0x00007ffd4a2dbfe2 in dxgi!DXGIReportAdapterConfiguration () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#33 0x00007ffd4a2dbdff in dxgi!DXGIReportAdapterConfiguration () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#34 0x00007ffd4a2cc2e0 in dxgi!CompatString () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#35 0x00007ffd4a2cec15 in dxgi!CompatString () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#36 0x00007ffd4a2ce626 in dxgi!CompatString () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#37 0x00007ffd4a2d0320 in dxgi!CompatString () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#38 0x00007ffd4a2d022a in dxgi!CompatString () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#39 0x00007ffd4a2de7c3 in dxgi!DXGIReportAdapterConfiguration () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#40 0x00007ffd4a2dd534 in dxgi!DXGIReportAdapterConfiguration () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#41 0x00007ffd4a2dda04 in dxgi!DXGIReportAdapterConfiguration () from C:\WINDOWS\SYSTEM32\dxgi.dll
+#42 0x00007ffc4b3e6d03 in vk_gr2608GetInstanceProcAddr () from C:\WINDOWS\System32\DriverStore\FileRepository\nvdmwi.inf_amd64_ed4a22c6260acb8a\nvoglv64.dll
+#43 0x00007ffc4b3dc456 in vk_gr2608GetInstanceProcAddr () from C:\WINDOWS\System32\DriverStore\FileRepository\nvdmwi.inf_amd64_ed4a22c6260acb8a\nvoglv64.dll
+#44 0x00007ffc4b3e463b in vk_gr2608GetInstanceProcAddr () from C:\WINDOWS\System32\DriverStore\FileRepository\nvdmwi.inf_amd64_ed4a22c6260acb8a\nvoglv64.dll
+#45 0x00007ffc4b3db231 in vk_gr2608GetInstanceProcAddr () from C:\WINDOWS\System32\DriverStore\FileRepository\nvdmwi.inf_amd64_ed4a22c6260acb8a\nvoglv64.dll
+#46 0x00007ffc9a7b88f4 in vulkan-1!vkResetEvent () from C:\WINDOWS\SYSTEM32\vulkan-1.dll
+#47 0x00007ffcef0cd2bc in graphics-hook64!dummy_debug_proc () from C:\ProgramData\obs-studio-hook\graphics-hook64.dll
+#48 0x00007ffc9a7ba425 in vulkan-1!vkResetEvent () from C:\WINDOWS\SYSTEM32\vulkan-1.dll
+#49 0x00007ff74b6ab7f6 in nkentseu::NkVulkanDevice::CreateSwapchain (this=0x221a91aef38, w=1280, h=720) at C:\Rihen\ateliers_kits\cours_2210\Nkentseu\Kernel\Runtime\NKRHI\src\NKRHI\Vulkan/NkVulkanDevice.cpp:839
+#50 0x00007ff74b6ae9f2 in nkentseu::NkVulkanDevice::RecreateSwapchain (this=0x221a91aef38, w=1280, h=720) at C:\Rihen\ateliers_kits\cours_2210\Nkentseu\Kernel\Runtime\NKRHI\src\NKRHI\Vulkan/NkVulkanDevice.cpp:944
+#51 0x00007ff74b6b6f0b in nkentseu::NkVulkanDevice::EndFrame (this=0x221a91aef38) at C:\Rihen\ateliers_kits\cours_2210\Nkentseu\Kernel\Runtime\NKRHI\src\NKRHI\Vulkan/NkVulkanDevice.cpp:2447
+#52 0x00007ff74b4fb122 in nkentseu::renderer::NkRendererImpl::EndFrame (this=0x221aec90528) at C:\Rihen\ateliers_kits\cours_2210\Nkentseu\Kernel\Runtime\NKRenderer\src\NKRenderer\Core/NkRendererImpl.cpp:1906
+#53 0x00007ff74b4d2939 in nkmain () at C:\Users\USER\Documents\GitHub\ani-5089\Mes_builds\..\chapitre-08\exo9-le_figement_provoque_puis_leve/cible.cpp:162
+#54 0x00007ff74b4d1756 in WinMain (hInstance=0x7ff74b4d0000, hPrevInstance=0x0, lpCmdLine=0x221a910b2a9 "", nCmdShow=1) at C:\Users\USER\Documents\GitHub\ani-5089\R3D\include/NKWindow/EntryPoints/NkWindowsDesktop.h:84
+#55 0x00007ff74b5bcef5 in main (argc=<optimized out>, argv=<optimized out>, envp=<optimized out>) at D:/W/B/src/mingw-w64/mingw-w64-crt/crt/crtexewin.c:62
+[Inferior 1 (process 12500) detached]
