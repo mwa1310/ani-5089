@@ -14,7 +14,9 @@ bool endsWith(const std::string& s, const std::string& suffixe) {
 int mainDe(const std::string& usage) {
     static const std::set<std::string> droite = {
         "SELECT", "GRAB", "AIM_POSE", "GRIP_POSE", "HAPTIC", "MOVE_RIGHT"};
-    if (usage == "MENU" || usage == "MOVE") return 2;
+    if (usage == "MENU" || usage == "MOVE") {
+        return 2;
+    }
     if (endsWith(usage, "_LEFT")) {
         static const std::set<std::string> gauche = {
             "SELECT_LEFT", "GRAB_LEFT", "AIM_POSE_LEFT", "GRIP_POSE_LEFT", "HAPTIC_LEFT"};
@@ -27,28 +29,43 @@ int mainDe(const std::string& usage) {
 
 int main() {
     std::string ligne;
-    if (!std::getline(std::cin, ligne)) return 0;
+    if (!std::getline(std::cin, ligne)) {
+        return 0;
+    }
     int n = 0;
-    try { n = std::stoi(ligne); } catch (...) { return 0; }
+    try {
+        n = std::stoi(ligne);
+    } catch (...) {
+        return 0;
+    }
 
     int deuxMains = 0;
     for (int lues = 0; lues < n && std::getline(std::cin, ligne);) {
-        if (!ligne.empty() && ligne.back() == '\r') ligne.pop_back();
+        if (!ligne.empty() && ligne.back() == '\r') {
+            ligne.pop_back();
+        }
         std::istringstream flux(ligne);
         std::string nom;
-        if (!(flux >> nom)) continue;
+        if (!(flux >> nom)) {
+            continue;  
+        }
         ++lues;
 
         int droit = 0, gauche = 0;
         std::string usage;
         while (flux >> usage) {
             const int m = mainDe(usage);
-            if (m == 1) ++droit;
-            else if (m == 2) ++gauche;
+            if (m == 1) {
+                ++droit;
+            } else if (m == 2) {
+                ++gauche;
+            }
         }
 
         const bool deux = droit > 0 && gauche > 0;
-        if (deux) ++deuxMains;
+        if (deux) {
+            ++deuxMains;
+        }
         std::cout << nom << " " << droit << " " << gauche
                   << (deux ? " DEUX MAINS" : " UNE MAIN") << "\n";
     }
