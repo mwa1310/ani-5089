@@ -28,14 +28,15 @@ namespace {
 constexpr unsigned kLargeur = 1280;
 constexpr unsigned kHauteur = 720;
 constexpr float kPas = 1.0f / 60.0f;      
-constexpr int kImageSaisie = 60;         
+constexpr int kImageSaisie = 60;          
 constexpr int kImageCapture = 75;        
 constexpr float kRayonProche = 0.10f;     
 constexpr float kDemiCote = 0.05f;       
 
+// Etat d'une action booleenne
 struct EtatBool {
     bool current = false;   
-    bool changed = false; 
+    bool changed = false;  
     bool active = false;    
 };
 
@@ -47,7 +48,7 @@ void Synchroniser(EtatBool& e, bool lie, bool presse) {
 }
 
 struct Objet {
-    NkMat4f pose;            
+    NkMat4f pose;        
     bool tenu = false;
     bool dynamique = false;  
     float vitesseY = 0.0f;
@@ -102,7 +103,7 @@ NkLightDesc Soleil() {
     return s;
 }
 
-} 
+}
 
 int nkmain(const NkEntryState&) {
     NkWindowConfig cfgFenetre;
@@ -110,17 +111,23 @@ int nkmain(const NkEntryState&) {
     cfgFenetre.width = kLargeur;
     cfgFenetre.height = kHauteur;
     NkWindow fenetre(cfgFenetre);
-    if (!fenetre.IsValid()) return 1;
+    if (!fenetre.IsValid()) {
+        return 1;
+    }
 
     NkDeviceInitInfo devInit{};
     devInit.surface = fenetre.GetSurfaceDesc();
     devInit.width = fenetre.GetSize().x;
     devInit.height = fenetre.GetSize().y;
     NkIDevice* device = NkDeviceFactory::CreateAutoDetect(devInit);
-    if (!device) return 1;
+    if (!device) {
+        return 1;
+    }
 
     NkRenderer* rEcran = NkRenderer::Create(device, NkRendererConfig::For2D(devInit.api, devInit.width, devInit.height));
-    if (!rEcran || !rEcran->Initialize()) return 1;
+    if (!rEcran || !rEcran->Initialize()) {
+        return 1;
+    }
 
     NkOffscreenDesc od;
     od.width = kLargeur;
@@ -132,7 +139,9 @@ int nkmain(const NkEntryState&) {
     od.readback = true;
     od.name = "Scene_Saisie";
     NkOffscreenTarget* cible = rEcran->CreateOffscreen(od);
-    if (!cible) return 1;
+    if (!cible) {
+        return 1;
+    }
 
     NkRendererConfig cfgScene = NkRendererConfig::ForGame(devInit.api, kLargeur, kHauteur);
     cfgScene.Disable(NK_SS_RENDER2D);
@@ -140,7 +149,9 @@ int nkmain(const NkEntryState&) {
     cfgScene.Disable(NK_SS_OVERLAY);
     cfgScene.Enable(NK_SS_OFFSCREEN);
     NkRenderer* rendu = NkRenderer::Create(device, cfgScene);
-    if (!rendu || !rendu->Initialize()) return 1;
+    if (!rendu || !rendu->Initialize()) {
+        return 1;
+    }
     rendu->SetFinalColorTarget(rEcran->GetTextures()->GetRHIHandle(cible->GetColorResult()));
     rendu->SetRenderSizeOverride(kLargeur, kHauteur);
 
@@ -154,21 +165,25 @@ int nkmain(const NkEntryState&) {
     objet.pose = NkMat4f::Translate({ -0.28f, 0.98f, -0.50f });
 
     EtatBool gachette;
-    NkMat4f attache;  
+    NkMat4f attache;   
 
     std::string mesures;
     bool tourne = true;
     for (int n = 1; tourne && fenetre.IsValid(); ++n) {
         NkEvent* ev = nullptr;
         while (NkEvents().PollEvent(ev)) {
-            if (ev->As<NkWindowCloseEvent>() != nullptr) tourne = false;
+            if (ev->As<NkWindowCloseEvent>() != nullptr) {
+                tourne = false;
+            }
         }
-        if (!tourne) break;
+        if (!tourne) {
+            break;
+        }
 
-        // 1. Synchroniser 
+        // 1. Synchroniser
         Synchroniser(gachette, true, n >= kImageSaisie);
 
-        // 2. La main bouge 
+        // 2. La main bouge
         if (n > kImageSaisie) {
             posPaume.x += 0.006f;
             posPaume.y += 0.004f;
@@ -177,13 +192,13 @@ int nkmain(const NkEntryState&) {
         const NkMat4f visee = paume * decalVisee;
 
         // 3. Interroger
-        const bool saisit = gachette.current && gachette.changed;   
-        const bool lache = !gachette.current && gachette.changed;   
+        const bool saisit = gachette.current && gachette.changed;     
+        const bool lache = !gachette.current && gachette.changed;    
         const bool proche = Distance(posPaume, Position(objet.pose)) < kRayonProche;
 
         // VERSION JUSTE 
         if (saisit && !objet.tenu && proche) {
-            attache = paume.Inverse() * objet.pose;  
+            attache = paume.Inverse() * objet.pose; 
             objet.tenu = true;
         }
         if (objet.tenu) {
@@ -191,17 +206,17 @@ int nkmain(const NkEntryState&) {
                 objet.tenu = false;
                 objet.dynamique = true;
             } else {
-                objet.pose = paume * attache;        
+                objet.pose = paume * attache;   
             }
         }
 
         // VERSION FAUTIVE 
         // if (saisit && proche) {
         //     attache = paume.Inverse() * objet.pose;
-        //     objet.pose = paume * attache;           
+        //     objet.pose = paume * attache;          
         //     objet.tenu = true;
         // } else if (objet.tenu) {
-        //     objet.tenu = false;                  
+        //     objet.tenu = false;                    
         //     objet.dynamique = true;
         // }
 
@@ -223,7 +238,9 @@ int nkmain(const NkEntryState&) {
             NkRender3D* r3d = rendu->GetRender3D();
             rendu->FlushGraphRebuilds();
             r3d->ResetFrame();
-            if (auto* mc = rendu->GetMaterialCollection()) mc->Upload();
+            if (auto* mc = rendu->GetMaterialCollection()) {
+                mc->Upload();
+            }
 
             NkCamera3DData cd;
             cd.position = { 0.35f, 1.35f, 1.30f };
@@ -242,11 +259,13 @@ int nkmain(const NkEntryState&) {
 
             r3d->Submit(Sol(meshes));
             r3d->Submit(Cube(cube, NkMat4f::Translate({ 0.f, 1.0f, -1.5f }), { 3.0f, 2.0f, 0.05f }, { 0.72f, 0.70f, 0.66f }));
-            r3d->Submit(Cube(cube, paume, { 0.08f, 0.08f, 0.08f }, { 0.85f, 0.15f, 0.15f })); // en rouge
-            r3d->Submit(Cube(cube, visee, { 0.04f, 0.04f, 0.04f }, { 0.15f, 0.35f, 0.90f })); // en bleu
-            r3d->Submit(Cube(cube, objet.pose, { 0.10f, 0.10f, 0.10f }, { 0.90f, 0.75f, 0.20f })); // en jaune  
+            r3d->Submit(Cube(cube, paume, { 0.08f, 0.08f, 0.08f }, { 0.85f, 0.15f, 0.15f }));    // en rouge
+            r3d->Submit(Cube(cube, visee, { 0.04f, 0.04f, 0.04f }, { 0.15f, 0.35f, 0.90f }));    // en bleu
+            r3d->Submit(Cube(cube, objet.pose, { 0.10f, 0.10f, 0.10f }, { 0.90f, 0.75f, 0.20f })); // en jaune
 
-            if (auto* graph = rendu->GetRenderGraph()) graph->Execute(cmd);
+            if (auto* graph = rendu->GetRenderGraph()) {
+                graph->Execute(cmd);
+            }
             if (auto* r2d = rEcran->GetRender2D()) {
                 r2d->DrawImage(cible->GetColorResult(), { 0.f, 0.f, (float)kLargeur, (float)kHauteur });
             }
@@ -264,15 +283,19 @@ int nkmain(const NkEntryState&) {
         }
 
         if (n == kImageCapture) {
-            const char* nom = std::getenv("NOM_CAPTURE");
-            const std::string chemin = Depot(nom ? nom : "niveau.png");
+            const char* nom = objet.tenu ? "niveau.png" : "front.png";
+            const std::string chemin = Depot(nom);
             const bool ok = cible->Capture(chemin.c_str());
-            std::fprintf(stderr, "capture %s : %s\n", chemin.c_str(), ok ? "ok" : "echec");
-            if (FILE* f = std::fopen("exo9_mesures.txt", "wb")) {
+            std::fprintf(stderr, "image %d : objet %s, capture %s : %s\n", n,
+                         objet.tenu ? "tenu" : "tombe", chemin.c_str(), ok ? "ok" : "echec");
+            const char* fichierMesures = objet.tenu ? "exo9_mesures_niveau.txt" : "exo9_mesures_front.txt";
+            if (FILE* f = std::fopen(fichierMesures, "wb")) {
                 std::fputs(mesures.c_str(), f);
                 std::fclose(f);
             }
-            if (!std::getenv("GARDER")) tourne = false;
+            if (!std::getenv("GARDER")) {
+                tourne = false;
+            }
         }
     }
 

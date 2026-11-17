@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
+#include <string>
 
 #include "actions.h"
 
@@ -11,20 +12,49 @@ const bool kToucheSaisir[kImages] = {false, true, true, true, false, false};
 const bool kToucheTirer[kImages]  = {false, false, false, false, true, false};
 const bool kPressionFantome[kImages] = {false, false, true, false, false, false};
 
+std::string cellule(const std::string& texte, std::size_t largeur) {
+    std::string r = texte;
+    if (r.size() < largeur) {
+        r.append(largeur - r.size(), ' ');
+    }
+    return r;
+}
+
+void ecrire(std::string ligne) {
+    while (!ligne.empty() && ligne.back() == ' ') {
+        ligne.pop_back();
+    }
+    std::printf("%s\n", ligne.c_str());
+}
+
+constexpr std::size_t kLargeurImage = 7;
+constexpr std::size_t kLargeurChamp = 9;
+
 int verifier(const char* quoi, bool ok) {
-    if (!ok) std::fprintf(stderr, "ECHEC : %s\n", quoi);
+    if (!ok) {
+        std::fprintf(stderr, "ECHEC : %s\n", quoi);
+    }
     return ok ? 0 : 1;
 }
 
-} 
+}  
 
 int main() {
     Action saisir("saisir");
     Action tirer("tirer");
-    Action avancer("avancer");
+    Action avancer("avancer");  
 
-    std::printf("%-6s %-14s %-14s %-14s\n", "image", "saisir", "tirer", "avancer");
-    std::printf("%-6s %-14s %-14s %-14s\n", "", "c ch a", "c ch a", "c ch a");
+    const Action* toutes[3] = {&saisir, &tirer, &avancer};
+
+    std::string entete = cellule("image", kLargeurImage);
+    std::string champs = cellule("", kLargeurImage);
+    for (const Action* a : toutes) {
+        entete += cellule(a->nom(), 3 * kLargeurChamp);
+        champs += cellule("courant", kLargeurChamp) + cellule("change", kLargeurChamp) +
+                  cellule("actif", kLargeurChamp);
+    }
+    ecrire(entete);
+    ecrire(champs);
 
     int fautes = 0;
     int fronts = 0;
@@ -36,18 +66,25 @@ int main() {
         tirer.synchroniser(true, kToucheTirer[i]);
         avancer.synchroniser(false, kPressionFantome[i]);
 
-        const Action* toutes[3] = {&saisir, &tirer, &avancer};
-        std::printf("%-6d", i + 1);
+        std::string ligne = cellule(std::to_string(i + 1), kLargeurImage);
         for (const Action* a : toutes) {
             const EtatAction& e = a->etat();
-            std::printf(" %d %-2d %-9d", e.courant, e.change, e.actif);
+            ligne += cellule(std::to_string(e.courant ? 1 : 0), kLargeurChamp) +
+                     cellule(std::to_string(e.change ? 1 : 0), kLargeurChamp) +
+                     cellule(std::to_string(e.actif ? 1 : 0), kLargeurChamp);
         }
-        std::printf("\n");
+        ecrire(ligne);
 
         const EtatAction& s = saisir.etat();
-        if (s.saisi()) ++fronts;
-        if (s.courant) ++niveaux;
-        if (s.lache()) ++lachers;
+        if (s.saisi()) {
+            ++fronts;
+        }
+        if (s.courant) {
+            ++niveaux;
+        }
+        if (s.lache()) {
+            ++lachers;
+        }
 
         fautes += verifier("avancer reste inactive", !avancer.etat().actif);
         fautes += verifier("avancer reste a faux", !avancer.etat().courant);
