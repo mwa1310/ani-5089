@@ -6,3 +6,13 @@ Aucun appel n'a échoué. La trame 6 s'est déroulée sans erreur : le début a 
 
 Ce que je fais maintenant a chaque trame :
 J'appelle la fin de trame à chaque tour, en dehors du test de rendu : avec zéro couche quand rien n'est dessiné, avec la couche quand on dessine. Dans exo10_journal_apres.txt, les trames 6 à 10 donnent "rend : 0, debut : 1, fin : 1", puis la trame 11 reprend avec "rend : 1, debut : 1, fin : 1", et il en va de même jusqu'à la trame 20. Les vingt trames ont une fin, et le compte des débuts égale celui des fins. Mon ordre de boucle est : événements, attente, début, synchronisation des actions, rendu seulement si demandé, fin toujours.
+
+Trames relevées de la version corrigée (exo10_journal_apres.txt, non rendu, recopiées ici) :
+trame : 5, rend : 1, debut : 1, fin : 1
+trame : 6, rend : 0, debut : 1, fin : 1
+trame : 7, rend : 0, debut : 1, fin : 1
+trame : 8, rend : 0, debut : 1, fin : 1
+trame : 9, rend : 0, debut : 1, fin : 1
+trame : 10, rend : 0, debut : 1, fin : 1
+trame : 11, rend : 1, debut : 1, fin : 1
+trame : 20, rend : 1, debut : 1, fin : 1

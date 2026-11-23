@@ -6,3 +6,13 @@ Le compositeur calcule l'écart entre la pose réelle au moment d'afficher et la
 
 Pourquoi la pose fraiche ne corrige rien :
 Dans la version fautive, j'ai redemandé les vues juste avant de soumettre et j'ai donc soumis 0,672, la pose fraîche (exo9_mesures_fraiche.txt : "image 40 : ... lacet soumis 0.672, SANS 2.151, AVEC 2.151"). Le compositeur compare alors la pose réelle (0,672) avec la pose soumise (0,672) : l'écart est nul, il ne corrige rien, et l'image dessinée à 2,822 est affichée telle quelle. L'erreur qui reste est exactement celle qu'on aurait sans reprojection, 2,151 degrés aux trois images relevées (2,098, 2,130 puis 2,151) : la reprojection a tourné à vide. Sur les captures prises à la même image 40, la scène a glissé : le bord gauche du cube rouge passe de la colonne 372 (rendu.png) à 399 (fraiche.png), celui du jaune de 601 à 625 et celui du bleu de 879 à 907, soit environ 24 à 28 pixels vers la droite. Les deux fichiers ont des empreintes différentes. Avec une tête qui tourne à plus de 100 degrés par seconde, ce décalage se répète à chaque trame, et rien ne plante : la pose fraîche est plus vraie, mais elle est fausse ici.
+
+Lignes relevées (fichiers de mesures non rendus, recopiées ici) :
+exo9_mesures_rendu.txt
+image 38 : instant 0.5278 s, lacet rendu 5.750, lacet reel 3.651, lacet soumis 5.750, SANS 2.098, AVEC 0.000
+image 39 : instant 0.5417 s, lacet rendu 4.298, lacet reel 2.168, lacet soumis 4.298, SANS 2.130, AVEC 0.000
+image 40 : instant 0.5556 s, lacet rendu 2.822, lacet reel 0.672, lacet soumis 2.822, SANS 2.151, AVEC 0.000
+exo9_mesures_fraiche.txt
+image 38 : instant 0.5278 s, lacet rendu 5.750, lacet reel 3.651, lacet soumis 3.651, SANS 2.098, AVEC 2.098
+image 39 : instant 0.5417 s, lacet rendu 4.298, lacet reel 2.168, lacet soumis 2.168, SANS 2.130, AVEC 2.130
+image 40 : instant 0.5556 s, lacet rendu 2.822, lacet reel 0.672, lacet soumis 0.672, SANS 2.151, AVEC 2.151
